@@ -1,0 +1,424 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root{
+  --navy:#082f5f; --blue:#087fd5; --sky:#43afea; --ink:#123d68;
+  --muted:#607b96; --line:#dce9f3; --soft:#f4f9fd;
+  --shadow:0 16px 42px rgba(6,48,88,.12);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{margin:0;font-family:Inter,Arial,sans-serif;color:var(--ink);background:#fff;overflow-x:hidden}
+img{max-width:100%;height:auto}
+a{text-decoration:none;color:inherit}
+button{font:inherit}
+.container{width:min(1560px,calc(100% - 80px));margin-inline:auto}
+
+.header{height:88px;background:#fff;position:sticky;top:0;z-index:100;border-bottom:1px solid #e6eef4}
+.nav-wrap{height:100%;display:flex;align-items:center;min-width:0}
+.brand{width:280px;height:88px;display:flex;align-items:center;flex:0 0 280px}
+.brand img{width:245px;height:82px;object-fit:contain;object-position:left center;display:block}
+.nav{margin-left:auto;display:flex;align-items:center;gap:clamp(18px,2vw,34px)}
+.nav a{font-size:clamp(13px,1vw,15px);font-weight:600;color:#153a62;position:relative;padding:34px 0;white-space:nowrap}
+.nav a:first-child{color:var(--blue)}
+.nav a:first-child:after{content:"";position:absolute;left:0;right:0;bottom:24px;height:2px;background:var(--blue)}
+.nav-cta{margin-left:clamp(12px,2vw,30px);background:var(--navy);color:#fff;border-radius:11px;padding:15px 24px;display:inline-flex;gap:10px;align-items:center;font-size:14px;font-weight:700;white-space:nowrap}
+.nav-cta:hover,.btn:hover{transform:translateY(-2px)}
+.menu-btn{display:none;border:0;background:none;color:var(--navy)}
+
+.hero{min-height:520px;position:relative;overflow:hidden;background:#f2f9fd}
+.hero-scene{position:absolute;inset:0;background:url('/brand/hero-trinova.jpg') right center / min(68vw,1050px) auto no-repeat}
+.hero-fade{position:absolute;inset:0;background:linear-gradient(90deg,#f4fbfe 0%,#f4fbfe 25%,rgba(244,251,254,.96) 36%,rgba(244,251,254,.60) 49%,rgba(244,251,254,.12) 61%,rgba(244,251,254,0) 72%)}
+.hero-content{min-height:520px;position:relative;z-index:2;display:flex;align-items:flex-start}
+.hero-copy{width:min(52%,720px);padding-top:58px;min-width:0}
+.eyebrow{font-size:10px;letter-spacing:3px;font-weight:800;color:var(--blue);margin-bottom:14px}
+.hero h1{font-size:clamp(44px,4.15vw,64px);line-height:1.02;letter-spacing:-3px;margin:0 0 20px;color:var(--navy)}
+.hero h1 span{color:var(--blue)}
+.hero-copy p{font-size:clamp(14px,1.05vw,16px);line-height:1.62;color:#486781;max-width:660px;margin:0 0 24px}
+.hero-actions{display:flex;gap:13px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-weight:700;border-radius:8px;padding:14px 20px;font-size:13px;transition:transform .2s,box-shadow .2s}
+.btn.primary{background:var(--blue);color:#fff;box-shadow:0 9px 24px rgba(8,127,213,.2)}
+.btn.outline{border:1px solid #6f8aa3;background:rgba(255,255,255,.88);color:var(--navy)}
+.pillars{display:flex;gap:clamp(25px,3vw,50px);margin-top:29px}
+.pillar{display:flex;flex-direction:column;align-items:center;text-align:center;gap:7px;min-width:72px}
+.pillar svg{color:var(--navy);stroke-width:1.7}
+.pillar span{font-size:11px;font-weight:700;line-height:1.3}
+
+.stats{position:relative;margin-top:-26px;z-index:10}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);background:#fff;border:1px solid #e1eaf2;border-radius:14px;box-shadow:var(--shadow);padding:18px 20px}
+.stats-grid>div{display:flex;align-items:center;gap:15px;padding:6px clamp(12px,2vw,30px);border-right:1px solid #e0eaf2;min-width:0}
+.stats-grid>div:last-child{border-right:0}
+.stats-grid svg{width:38px;height:38px;flex:0 0 38px;color:var(--navy);stroke-width:1.7}
+.stats-grid strong{display:block;font-size:clamp(18px,1.55vw,23px);line-height:1.15}
+.stats-grid span{display:block;font-size:10px;color:#6b8399;margin-top:3px;white-space:nowrap}
+
+.section{padding:76px 0}
+.center-head{text-align:center;max-width:820px;margin:0 auto 31px}
+.center-head h2,.section-head h2{font-size:clamp(30px,2.65vw,40px);letter-spacing:-1.7px;line-height:1.12;margin:0;color:var(--navy)}
+.center-head h2 span,.section-head h2 span,.about-copy h2 span,.lf-copy h2 span{color:var(--blue)}
+.center-head p,.section-head p{font-size:13px;line-height:1.6;color:var(--muted);margin:11px auto 0;max-width:800px}
+.solution-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
+.solution-card{min-height:235px;border:1px solid var(--line);border-radius:10px;padding:23px 20px 18px;background:#fff;display:flex;flex-direction:column;box-shadow:0 4px 15px rgba(5,45,84,.03)}
+.solution-card.featured{background:#eaf7fe;border-color:#c7e5f7}
+.icon-box{width:50px;height:50px;border-radius:11px;background:#edf7fe;color:var(--blue);display:grid;place-items:center;margin-bottom:20px}
+.solution-card h3{font-size:15px;line-height:1.24;margin:0 0 8px}
+.solution-card p{font-size:11px;line-height:1.55;color:var(--muted);margin:0}
+.circle-arrow{width:29px;height:29px;border-radius:50%;background:#e8f4fd;color:var(--blue);display:grid;place-items:center;margin-top:auto}
+
+.logifleet{padding:56px 0;background:linear-gradient(100deg,#eef9fe,#fff);border-top:1px solid #e0edf5;border-bottom:1px solid #e0edf5;overflow:hidden}
+.lf-grid{display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);gap:55px;align-items:center}
+.lf-copy h2{font-size:clamp(34px,3vw,44px);letter-spacing:-2px;margin:0 0 7px}
+.lf-tag{font-size:16px;font-weight:800;color:#173f68}
+.lf-copy p{font-size:13px;line-height:1.65;color:var(--muted);max-width:500px}
+.lf-copy ul{list-style:none;padding:0;margin:18px 0 24px;display:grid;gap:8px}
+.lf-copy li{display:flex;align-items:center;gap:9px;font-size:11px;font-weight:700;color:#365876}
+.lf-copy li svg{color:var(--blue);flex:0 0 17px}
+.lf-visual{display:flex;justify-content:flex-end;min-width:0}
+.lf-visual img{width:min(100%,760px);height:auto;aspect-ratio:1.9/1;object-fit:contain;display:block}
+
+.about-grid{display:grid;grid-template-columns:minmax(0,.86fr) minmax(0,1.14fr);gap:62px;align-items:center}
+.about-art{height:355px;border-radius:17px;overflow:hidden;position:relative;background:#d9edf8}
+.about-art>img{width:100%;height:100%;object-fit:cover;display:block}
+.about-art:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(3,35,70,0) 55%,rgba(3,35,70,.13))}
+.art-note{position:absolute;left:22px;bottom:20px;background:var(--navy);color:#fff;border-radius:10px;padding:16px 20px;box-shadow:0 13px 25px rgba(0,31,64,.2);z-index:2}
+.art-note b{font-size:17px;line-height:1.25}
+.art-note span{display:block;color:#9bc4df;font-size:9px;margin-top:7px}
+.about-copy h2{font-size:clamp(32px,2.8vw,40px);letter-spacing:-1.7px;margin:0 0 17px}
+.about-copy p{font-size:13px;line-height:1.7;color:var(--muted);max-width:700px}
+.about-points{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:17px;margin:25px 0}
+.about-points div{display:flex;flex-direction:column;gap:6px}
+.about-points svg{color:var(--blue);width:25px}
+.about-points b{font-size:10px}
+.about-points span{font-size:8px;line-height:1.45;color:var(--muted)}
+
+.approach{background:#f5faff;padding:52px 0}
+.approach-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.approach-step{display:flex;align-items:flex-start;gap:12px;position:relative;padding:8px 10px}
+.step-icon{width:50px;height:50px;flex:0 0 50px;border-radius:50%;background:#e5f3fc;color:var(--blue);display:grid;place-items:center}
+.approach-step small{font-size:9px;color:var(--blue);font-weight:800}
+.approach-step h3{font-size:14px;margin:3px 0 5px}
+.approach-step p{font-size:9px;line-height:1.5;color:var(--muted);margin:0}
+.step-arrow{position:absolute;right:-8px;top:25px;color:#5a9ccc}
+
+.industries{padding-top:56px;padding-bottom:52px}
+.section-head{margin-bottom:27px}
+.section-head h2{margin-bottom:7px}
+.industry-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px}
+.industry-card{border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#fff}
+.industry-card>img{width:100%;height:155px;object-fit:cover;display:block}
+.industry-copy{position:relative;padding:14px 45px 16px 16px;min-height:82px}
+.industry-copy h3{font-size:13px;margin:0 0 5px}
+.industry-copy p{font-size:9px;line-height:1.5;color:var(--muted);margin:0}
+.industry-copy .circle-arrow{position:absolute;right:13px;bottom:15px}
+
+.tech-strip{background:#fff;border-top:1px solid #e2edf5;border-bottom:1px solid #e2edf5;padding:20px 0}
+.tech-strip-inner{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.6fr);align-items:center;gap:35px}
+.tech-strip h2{font-size:25px;line-height:1.08;letter-spacing:-1px;margin:0;color:var(--navy)}
+.tech-strip h2 span{color:var(--blue)}
+.tech-items{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:9px}
+.tech-items span{display:flex;flex-direction:column;gap:4px;padding:10px 13px;border-left:1px solid #dfeaf3}
+.tech-items b{font-size:13px}.tech-items small{font-size:8px;color:var(--muted)}
+
+.cta{position:relative;overflow:hidden;min-height:170px;color:#fff}
+.cta-bg{position:absolute;inset:0;background:url('/brand/cta-road-trinova.jpg') center/cover no-repeat}
+.cta:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(4,70,116,.93),rgba(5,89,140,.76),rgba(5,72,113,.38))}
+.cta-inner{position:relative;z-index:2;min-height:170px;display:flex;justify-content:space-between;align-items:center;gap:40px}
+.eyebrow.light{color:#8bd2fa}
+.cta h2{font-size:clamp(27px,2.2vw,34px);letter-spacing:-1.1px;margin:0 0 8px}
+.cta p{font-size:13px;line-height:1.55;color:#e1f0fb;margin:0;max-width:950px}
+.btn.white{background:#fff;color:var(--navy);min-width:145px;min-height:52px}
+
+.footer{background:#fff;color:#153d66;padding:31px 0 14px;border-top:1px solid #dfeaf3}
+.footer-grid{display:grid;grid-template-columns:1.25fr .8fr 1.1fr .95fr 1.2fr .9fr;gap:28px;align-items:start;padding-bottom:25px}
+.footer-brand img{width:190px;height:72px;object-fit:contain;object-position:left center}
+.footer-brand p{font-size:9px;color:#526f89;margin:4px 0 12px}
+.footer-brand small{font-size:9px;line-height:1.5;color:#71879a}
+.footer-column,.footer-office,.footer-follow{display:flex;flex-direction:column;gap:8px}
+.footer-grid b{font-size:11px;color:#0a315b;margin-bottom:3px}
+.footer-grid a{font-size:9px;color:#58728a}
+.footer-office>div,.footer-office>a{display:flex;gap:8px;align-items:flex-start}
+.footer-office svg{width:14px;height:14px;color:var(--blue);flex:0 0 14px}
+.footer-office span{font-size:9px;line-height:1.4;color:#58728a}
+.footer-social{display:flex;gap:8px;margin:5px 0 12px}
+.footer-social a{width:28px;height:28px;border-radius:5px;background:var(--blue);color:#fff;font-size:10px;font-weight:800;display:grid;place-items:center}
+.footer-mark{font-size:22px;font-style:italic;line-height:1.05;color:#173c61}
+.footer-mark span{color:#3ca9ea}
+.footer-bottom{border-top:1px solid #e2ebf2;padding-top:11px;display:flex;justify-content:space-between;gap:20px;font-size:8px;color:#7890a4}
+.footer-bottom a{font-size:8px;color:#7890a4}
+.footer-bottom i{font-style:normal;color:#a7b6c2;margin:0 7px}
+
+@media(min-width:1600px){
+  .container{width:min(1560px,calc(100% - 80px))}
+  .header{height:92px}.brand{width:285px;height:92px;flex-basis:285px}.brand img{width:250px;height:86px}
+  .hero{min-height:560px}.hero-content{min-height:560px}.hero-copy{padding-top:66px}
+  .hero h1{font-size:clamp(54px,3.35vw,66px)}
+  .section{padding:84px 0}
+}
+
+@media(max-width:1280px){
+  .container{width:min(1160px,calc(100% - 56px))}
+  .brand{width:235px;flex-basis:235px}.brand img{width:210px}
+  .nav{gap:19px}.nav-cta{padding:14px 18px;margin-left:8px}
+  .hero-copy{width:56%}.hero h1{font-size:clamp(43px,4.5vw,56px)}
+  .solution-grid{grid-template-columns:repeat(5,minmax(0,1fr))}
+  .footer-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+
+@media(max-width:980px){
+  .container{width:calc(100% - 42px)}
+  .header{height:78px}.brand{height:78px;width:210px;flex-basis:210px}.brand img{width:190px;height:72px}
+  .nav{gap:13px}.nav a{font-size:12px;padding:30px 0}.nav-cta{font-size:12px;padding:12px 15px}
+  .hero{min-height:590px}.hero-content{min-height:590px}.hero-copy{width:62%;padding-top:52px}
+  .hero-scene{background-size:min(72vw,900px) auto;right:-40px}
+  .hero-fade{background:linear-gradient(90deg,#f4fbfe 0%,#f4fbfe 34%,rgba(244,251,254,.90) 49%,rgba(244,251,254,.28) 66%,rgba(244,251,254,0) 78%)}
+  .stats-grid{grid-template-columns:repeat(2,1fr)}.stats-grid>div:nth-child(2){border-right:0}.stats-grid>div:nth-child(-n+2){border-bottom:1px solid #e0eaf2}
+  .lf-grid,.about-grid{grid-template-columns:1fr 1fr;gap:32px}
+  .about-points{grid-template-columns:repeat(2,1fr)}
+  .approach-grid{grid-template-columns:repeat(2,1fr)}
+  .industry-grid{grid-template-columns:repeat(2,1fr)}
+  .tech-strip-inner{grid-template-columns:1fr}.tech-items{grid-template-columns:repeat(5,1fr)}
+}
+
+@media(max-width:760px){
+  .container{width:calc(100% - 30px)}
+  .header{height:70px}.nav-wrap{position:relative}
+  .brand{width:175px;height:70px;flex-basis:175px}.brand img{width:160px;height:64px}
+  .nav{display:none}.nav.mobile-open{position:absolute;left:0;right:0;top:70px;display:flex;flex-direction:column;align-items:stretch;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow);padding:8px;gap:0}
+  .nav.mobile-open a{padding:13px 12px;font-size:13px}.nav a:first-child:after{display:none}
+  .nav-cta{margin-left:auto;padding:11px 13px;font-size:11px}.menu-btn{display:block;margin-left:8px}
+  .hero{min-height:760px}.hero-content{min-height:760px}.hero-copy{width:100%;padding-top:34px}
+  .hero-scene{top:auto;bottom:0;right:0;height:355px;background-size:auto 355px;background-position:center bottom}
+  .hero-fade{background:linear-gradient(180deg,#f4fbfe 0%,rgba(244,251,254,.99) 38%,rgba(244,251,254,.75) 56%,rgba(244,251,254,.08) 79%,rgba(244,251,254,.02) 100%)}
+  .hero h1{font-size:clamp(38px,10vw,48px);letter-spacing:-2.2px}.hero-copy p{font-size:13px;max-width:100%}
+  .pillars{gap:4px;justify-content:space-between}.pillar{min-width:62px}.pillar span{font-size:9px}
+  .stats{margin-top:-15px}.stats-grid{grid-template-columns:1fr 1fr;padding:10px}.stats-grid>div{padding:11px 8px;border-right:0!important;border-bottom:1px solid #e1ebf3}.stats-grid>div:nth-last-child(-n+2){border-bottom:0}.stats-grid strong{font-size:16px}.stats-grid span{font-size:8px;white-space:normal}
+  .section{padding:58px 0}.center-head h2,.section-head h2{font-size:30px}
+  .solution-grid,.lf-grid,.about-grid,.approach-grid,.industry-grid,.tech-strip-inner{grid-template-columns:1fr}
+  .lf-grid{gap:28px}.lf-copy h2{font-size:35px}.lf-visual{justify-content:center}.lf-visual img{width:100%;aspect-ratio:auto}
+  .about-art{height:300px}.about-points{grid-template-columns:1fr 1fr}
+  .step-arrow{display:none}.tech-items{grid-template-columns:1fr 1fr}.tech-items span:last-child{grid-column:1/-1}
+  .cta{min-height:250px}.cta-inner{min-height:250px;flex-direction:column;align-items:flex-start;justify-content:center;gap:22px}.cta h2{font-size:27px}.cta p{font-size:12px}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:25px}.footer-brand{grid-column:1/-1}.footer-follow{grid-column:1/-1}
+  .footer-bottom{flex-direction:column;gap:8px}
+}
+
+@media(max-width:420px){
+  .nav-cta{display:none}
+  .hero{min-height:735px}.hero-content{min-height:735px}.hero-scene{height:325px;background-size:auto 325px}
+  .hero-copy{padding-top:28px}.hero h1{font-size:36px}.hero-actions .btn{width:100%}
+  .pillars{margin-top:22px}.pillar svg{width:26px;height:26px}.pillar span{font-size:8px}
+  .stats-grid{grid-template-columns:1fr}.stats-grid>div{border-right:0!important;border-bottom:1px solid #e1ebf3!important}.stats-grid>div:last-child{border-bottom:0!important}
+  .about-points{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr}
+}
+
+
+
+/* ================================================================
+   TriNova responsive layout — final stabilization
+   Desktop/tablet layout is fluid. Five solution cards stay on ONE
+   desktop row; only the true mobile breakpoint stacks them.
+   ================================================================ */
+html, body, #root { width:100%; min-width:0; }
+body { overflow-x:hidden; }
+.container { width:calc(100% - 64px); max-width:1600px; margin-inline:auto; }
+
+/* Header */
+.header { height:88px; }
+.brand { width:250px; flex:0 0 250px; height:88px; }
+.brand img { width:225px; height:82px; object-fit:contain; }
+.nav { gap:clamp(14px,1.5vw,30px); min-width:0; }
+.nav a { font-size:clamp(13px,0.9vw,16px); }
+.nav-cta { font-size:clamp(13px,0.9vw,15px); padding:15px 22px; }
+
+/* Hero: use viewport-relative image sizing so zoomed-out/wide desktops
+   do not turn into a tiny centered composition. */
+.hero { min-height:clamp(500px,36vw,610px); }
+.hero-content { min-height:inherit; }
+.hero-scene { background-size:clamp(760px,62vw,1450px) auto; background-position:right center; }
+.hero-copy { width:min(54vw,760px); padding-top:clamp(48px,4vw,70px); }
+.hero h1 { font-size:clamp(44px,4vw,68px); }
+.hero-copy p { max-width:700px; }
+
+/* Solutions — five cards on one row throughout desktop/tablet. */
+.solution-grid { grid-template-columns:repeat(5,minmax(0,1fr)); gap:14px; }
+.solution-card { min-width:0; min-height:235px; }
+.solution-card h3 { font-size:clamp(13px,0.9vw,16px); }
+.solution-card p { font-size:clamp(10px,0.65vw,12px); }
+
+/* Other grids stay proportional to the viewport. */
+.stats-grid { grid-template-columns:repeat(4,minmax(0,1fr)); }
+.lf-grid { grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr); }
+.about-grid { grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr); }
+.industry-grid { grid-template-columns:repeat(4,minmax(0,1fr)); }
+
+/* The About artwork intentionally contains NO pasted/placeholder logo. */
+.about-art>img { object-fit:cover; object-position:center; }
+
+/* 5-card desktop remains stable down to a compact laptop viewport. */
+@media (max-width:1100px) and (min-width:761px){
+  .container { width:calc(100% - 42px); }
+  .header { height:78px; }
+  .brand { width:190px; flex-basis:190px; height:78px; }
+  .brand img { width:175px; height:72px; }
+  .nav { gap:12px; }
+  .nav a { font-size:12px; }
+  .nav-cta { font-size:12px; padding:12px 14px; }
+  .hero { min-height:520px; }
+  .hero-content { min-height:520px; }
+  .hero-scene { background-size:clamp(680px,67vw,900px) auto; }
+  .hero-copy { width:56%; padding-top:48px; }
+  .hero h1 { font-size:clamp(40px,4.6vw,54px); }
+  .solution-grid { grid-template-columns:repeat(5,minmax(0,1fr)); gap:8px; }
+  .solution-card { min-height:205px; padding:18px 13px 14px; }
+  .solution-card h3 { font-size:12px; }
+  .solution-card p { font-size:9px; }
+  .icon-box { width:44px; height:44px; margin-bottom:14px; }
+}
+
+/* Mobile is the only breakpoint where the desktop card composition changes. */
+@media (max-width:760px){
+  .container { width:calc(100% - 30px); }
+  .header { height:70px; }
+  .brand { width:175px; flex-basis:175px; height:70px; }
+  .brand img { width:160px; height:64px; }
+  .nav { display:none; }
+  .nav.mobile-open { position:absolute; left:0; right:0; top:70px; display:flex; flex-direction:column; align-items:stretch; background:#fff; border:1px solid var(--line); box-shadow:var(--shadow); padding:8px; gap:0; }
+  .nav.mobile-open a { padding:13px 12px; font-size:13px; }
+  .nav-cta { margin-left:auto; padding:11px 13px; font-size:11px; }
+  .menu-btn { display:block; margin-left:8px; }
+  .hero { min-height:760px; }
+  .hero-content { min-height:760px; }
+  .hero-copy { width:100%; padding-top:34px; }
+  .hero-scene { top:auto; bottom:0; right:0; height:355px; background-size:auto 355px; background-position:center bottom; }
+  .hero h1 { font-size:clamp(38px,10vw,48px); }
+  .solution-grid { grid-template-columns:1fr; gap:14px; }
+  .solution-card { min-height:210px; }
+  .stats-grid { grid-template-columns:1fr 1fr; }
+  .lf-grid, .about-grid, .approach-grid, .industry-grid, .tech-strip-inner { grid-template-columns:1fr; }
+}
+
+@media (max-width:420px){
+  .nav-cta { display:none; }
+  .hero { min-height:735px; }
+  .hero-content { min-height:735px; }
+  .hero-scene { height:325px; background-size:auto 325px; }
+  .stats-grid { grid-template-columns:1fr; }
+  .about-points { grid-template-columns:1fr; }
+  .footer-grid { grid-template-columns:1fr; }
+}
+
+
+/* ================================================================
+   TriNova — viewport/zoom stability pass
+   IMPORTANT: Do not cap the main container with a fixed max-width.
+   Browser zoom changes CSS viewport width; a capped container therefore
+   becomes physically tiny at 60% and reflows at high zoom. The layout
+   below uses viewport-relative sizing so the desktop composition remains
+   visually stable across browser zoom and desktop resolutions.
+   ================================================================ */
+
+html, body, #root { width:100%; min-width:0; }
+body { overflow-x:hidden; }
+
+.container {
+  width:calc(100% - clamp(30px, 3.4vw, 80px));
+  max-width:none;
+  margin-inline:auto;
+}
+
+/* Keep desktop composition until genuine phone width. */
+@media (min-width:761px) {
+  .header { height:clamp(76px, 4.6vw, 92px); }
+  .brand {
+    width:clamp(190px, 14.5vw, 285px);
+    flex:0 0 clamp(190px, 14.5vw, 285px);
+    height:100%;
+  }
+  .brand img {
+    width:clamp(175px, 12.8vw, 250px);
+    height:90%;
+  }
+  .nav { gap:clamp(10px, 1.45vw, 28px); }
+  .nav a { font-size:clamp(11px, .82vw, 15px); padding:calc(clamp(76px,4.6vw,92px)/2 - 9px) 0; }
+  .nav a:first-child:after { bottom:calc(clamp(76px,4.6vw,92px)/2 - 31px); }
+  .nav-cta {
+    margin-left:clamp(8px, 1.2vw, 24px);
+    padding:clamp(11px, .9vw, 15px) clamp(14px, 1.3vw, 24px);
+    font-size:clamp(11px, .78vw, 14px);
+  }
+
+  .hero { min-height:clamp(500px, 31.5vw, 610px); }
+  .hero-content { min-height:inherit; }
+  .hero-scene {
+    background-image:url('/brand/hero-final.jpg');
+    background-size:55vw auto;
+    background-position:right center;
+  }
+  .hero-fade {
+    background:linear-gradient(90deg,#f4fbfe 0%,#f4fbfe 25%,rgba(244,251,254,.96) 37%,rgba(244,251,254,.60) 50%,rgba(244,251,254,.12) 62%,rgba(244,251,254,0) 73%);
+  }
+  .hero-copy { width:46vw; max-width:none; padding-top:clamp(48px,4vw,70px); }
+  .hero h1 { font-size:clamp(44px,3.35vw,68px); }
+  .hero-copy p { font-size:clamp(13px,.85vw,16px); max-width:38vw; }
+  .pillars { gap:clamp(22px,2.4vw,48px); }
+
+  .stats-grid { grid-template-columns:repeat(4,minmax(0,1fr)); }
+
+  /* Five solution cards: one row on every non-mobile viewport. */
+  .solution-grid { grid-template-columns:repeat(5,minmax(0,1fr)); gap:clamp(8px,.75vw,14px); }
+  .solution-card { min-width:0; min-height:clamp(205px,12.3vw,235px); padding:clamp(16px,1.15vw,23px) clamp(12px,1vw,20px) 18px; }
+  .solution-card h3 { font-size:clamp(11px,.82vw,15px); }
+  .solution-card p { font-size:clamp(8px,.58vw,11px); }
+  .icon-box { width:clamp(42px,2.6vw,50px); height:clamp(42px,2.6vw,50px); margin-bottom:clamp(14px,1.05vw,20px); }
+
+  .lf-grid { grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr); }
+  .about-grid { grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr); }
+  .industry-grid { grid-template-columns:repeat(4,minmax(0,1fr)); }
+  .approach-grid { grid-template-columns:repeat(4,minmax(0,1fr)); }
+
+  /* Footer stays as the intended six-column desktop footer. */
+  .footer-grid {
+    grid-template-columns:1.25fr .8fr 1.1fr .95fr 1.2fr .9fr;
+    gap:clamp(14px,1.5vw,28px);
+  }
+}
+
+/* No tablet reflow. This is deliberate: browser zoom is not a reason to
+   change the desktop composition. Only an actual phone viewport changes it. */
+@media (max-width:760px) {
+  .container { width:calc(100% - 30px); }
+  .header { height:70px; }
+  .brand { width:175px; flex-basis:175px; height:70px; }
+  .brand img { width:160px; height:64px; }
+  .nav { display:none; }
+  .nav.mobile-open {
+    position:absolute; left:0; right:0; top:70px; display:flex; flex-direction:column;
+    align-items:stretch; background:#fff; border:1px solid var(--line);
+    box-shadow:var(--shadow); padding:8px; gap:0;
+  }
+  .nav.mobile-open a { padding:13px 12px; font-size:13px; }
+  .nav-cta { margin-left:auto; padding:11px 13px; font-size:11px; }
+  .menu-btn { display:block; margin-left:8px; }
+  .hero { min-height:760px; }
+  .hero-content { min-height:760px; }
+  .hero-copy { width:100%; padding-top:34px; }
+  .hero-scene { top:auto; bottom:0; right:0; height:355px; background-size:auto 355px; background-position:center bottom; }
+  .hero-fade { background:linear-gradient(180deg,#f4fbfe 0%,rgba(244,251,254,.99) 38%,rgba(244,251,254,.75) 56%,rgba(244,251,254,.08) 79%,rgba(244,251,254,.02) 100%); }
+  .hero h1 { font-size:clamp(38px,10vw,48px); }
+  .solution-grid { grid-template-columns:1fr; gap:14px; }
+  .solution-card { min-height:210px; }
+  .stats-grid { grid-template-columns:1fr 1fr; }
+  .lf-grid,.about-grid,.approach-grid,.industry-grid,.tech-strip-inner { grid-template-columns:1fr; }
+  .footer-grid { grid-template-columns:1fr 1fr; }
+  .footer-brand,.footer-follow { grid-column:1/-1; }
+}
+
+@media (max-width:420px) {
+  .nav-cta { display:none; }
+  .hero { min-height:735px; }
+  .hero-content { min-height:735px; }
+  .hero-scene { height:325px; background-size:auto 325px; }
+  .stats-grid { grid-template-columns:1fr; }
+  .about-points { grid-template-columns:1fr; }
+  .footer-grid { grid-template-columns:1fr; }
+}
